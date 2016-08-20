@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
+//@OBSOLETE
 public class PlayerController : NetworkBehaviour {
 
     public float turnSpeed = 150f;
     public float horSpeed = 3f;
 
+    //@OBSOLETE
     public override void OnStartLocalPlayer()
     {
         SmoothFollow cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<SmoothFollow>();
         cam.target = this.transform;
     }
 
-	// Update is called once per frame
-	void Update () {
+    //@OBSOLETE
+    // Update is called once per frame
+    void Update () {
         if (!isLocalPlayer) return;
 
         var turn = Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed;
